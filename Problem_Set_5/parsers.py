@@ -106,46 +106,46 @@ generateJSONFile(all_wc_dict, "targetfile.json")
 ################################################################################
 # PART 6
 ################################################################################
-def searchCSV(csvfile, word):
+#def searchCSV(csvfile, word):
     
-    top_wordcount_doc = ""
-    top_wordcount = 0
+    #top_wordcount_doc = ""
+    #top_wordcount = 0
     
-    with open (csvfile) as csv_file:
-        file = csv.reader(csv_file)
+    #with open (csvfile) as csv_file:
+        #file = csv.reader(csv_file)
         
-        for line in file:
-            if line[1] == word and int(line[2])> int(top_wordcount):
-                top_wordcount_doc = line[0]
-                top_wordcount = line[2]
+        #for line in file:
+            #if line[1] == word and int(line[2])> int(top_wordcount):
+                #top_wordcount_doc = line[0]
+                #top_wordcount = line[2]
                 
-    csv_file.close()
-    return top_wordcount_doc
+    #csv_file.close()
+    #return top_wordcount_doc
 
 #print(searchCSV("targetfile1.csv", "our")
     # This function should search a CSV file from part 4 and find the filename
     # with the largest count of a specified word
     # Inputs: A CSV file to search and a word to search for
     # Outputs: The filename containing the highest count of the target word
-import json
-def searchJSON(JSONfile, word):
+#import json
+#def searchJSON(JSONfile, word):
     
-    top_wordcount_doc = ""
-    top_wordcount = 0
+    #top_wordcount_doc = ""
+    #top_wordcount = 0
     
-    with open (JSONfile) as json_file:
-        data = json.load(json_file)
+    #with open (JSONfile) as json_file:
+        #data = json.load(json_file)
         
-        for file in data:
-            if data[file][word]> top_wordcount:
-                top_wordcount_doc = file
-                top_wordcount = data[file][word]
+        #for file in data:
+            #if data[file][word]> top_wordcount:
+                #top_wordcount_doc = file
+                #top_wordcount = data[file][word]
                 
-    json_file.close()
-    return top_wordcount_doc
+    #json_file.close()
+    #return top_wordcount_doc
       
-print(searchCSV("targetfile.csv", "our"))
-print(searchJSON("targetfile.json", "our"))
+#print(searchCSV("targetfile.csv", "our"))
+#print(searchJSON("targetfile.json", "our"))
     #Issue (JSONDecodeError: Expecting ':' delimiter) maybe due to non array json file creation format...?(countless hours on stackoverflow and asking peers questions, part 6 defeated my code)
     # This function should search a JSON file from part 5 and find the filename
     # with the largest count of a specified word
@@ -182,12 +182,12 @@ print(searchJSON("targetfile.json", "our"))
 ################################################################################
 #Part 3
 ################################################################################
-
+#import sqlite3
 #conn = sqlite3.connect('sotu_speaches.db')
 #c = conn.cursor()
 
-#c.execute(''' CREATE TABLE State-of-the-Union-WordCount (filename, Word, Count)''')
-#c.execute(''' CREATE TABLE US-Presidents-Info (idx, number, start, end, president, prior, party, vice)''')
+#c.execute(''' CREATE TABLE State_of_the_Union_WordCount (filename text, Word text, Count real)''')
+#c.execute(''' CREATE TABLE US_Presidents_Info (idx real, number real, start date, end date, president text, prior text, party text, vice text)''')
 
 #conn.commit()
 #conn.close()
